@@ -9,8 +9,6 @@ app.use(express.text())
 app.use(express.urlencoded({extended: true}))
 
 
-
-
 app.post('/ping' , (req , res)=>{
     console.log(req.body);
     return res.json({message : 'pong'})
