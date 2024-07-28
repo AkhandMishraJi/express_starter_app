@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema ({
     password : {
         type : String ,
         required: [true , 'PLEASE FILL OUT PASSWORD'] ,
-        minlength : [6 , 'PASSWORD SHOULD 6 CHARACTERS LONG , WITH  MIX OF CAPITAL ,SMALL , SPECIAL CHARACTERS AND NUMBERS']
+        minlength : [6 , 'PASSWORD SHOULD 6 CHARACTERS LONG , WITH  MIX OF CAPITAL ,SMALL , SPECIAL CHARACTERS AND NUMBERS ...']
     }
 } , {
     timestamps : true
