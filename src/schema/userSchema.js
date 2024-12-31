@@ -1,22 +1,12 @@
 const mongoose = require("mongoose")
 
 const userSchema = new mongoose.Schema ({
-    firstName : {
+    fullName : {
         type : String ,
-        required : [true , "FIRST NAME IS REQUIRED , PLEASE FILL IT"] ,
-        minlength : [5 , 'FIRST NAME SHOULD BE 5 CHARACHTER LONG'] ,
-        lowercase : true , 
-        trim : true ,
-        maxLength : [50 , "FIRST NAME NOT SHOULD BE MORE THAN 50 CHARACTERS LONG "]
-    } ,
-    lastName : {
-        type : String ,
-        required : [true , "FIRST NAME IS REQUIRED , PLEASE FILL IT"] ,
-        minlength : [5 , 'FIRST NAME SHOULD BE 5 CHARACHTER LONG'] ,
-        lowercase : true , 
-        trim : true ,
-        maxLength : [50 , "FIRST NAME NOT SHOULD BE MORE THAN 50 CHARACTERS LONG "]
-    } ,
+        required : [true , " NAME IS REQUIRED , PLEASE FILL IT"] ,
+        trim : true
+    } 
+   ,
     mobileNumber : {
         type : String , 
         trim : true ,
@@ -36,7 +26,13 @@ const userSchema = new mongoose.Schema ({
         type : String ,
         required: [true , 'PLEASE FILL OUT PASSWORD'] ,
         minlength : [6 , 'PASSWORD SHOULD 6 CHARACTERS LONG , WITH  MIX OF CAPITAL ,SMALL , SPECIAL CHARACTERS AND NUMBERS ...']
+    },
+    role : {
+        type : String ,
+        default : 'USER',
+        enum : ['USER' , 'ADMIN']
     }
+ 
 } , {
     timestamps : true
 })
